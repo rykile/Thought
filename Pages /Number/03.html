@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="多数決と正しさの違いについて考える。">
+  <title>03. 多数決と、正しさは必ずしも同じではない</title>
+  <style>
+    :root {
+      --bg: #f7f5ef;
+      --paper: #fffdf8;
+      --text: #29372f;
+      --muted: #72786f;
+      --green: #365c47;
+      --line: #dedfd5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system, BlinkMacSystemFont,
+        "Hiragino Kaku Gothic ProN", "Yu Gothic",
+        Meiryo, sans-serif;
+      line-height: 1.95;
+    }
+
+    .container {
+      width: min(100% - 32px, 760px);
+      margin: 0 auto;
+      padding: 36px 0 56px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 28px;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .article {
+      padding: clamp(24px, 5vw, 48px);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .number {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+
+    h1 {
+      margin: 0 0 28px;
+      font-size: clamp(25px, 5vw, 34px);
+      line-height: 1.55;
+      letter-spacing: 0.02em;
+    }
+
+    h2 {
+      margin: 36px 0 12px;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    p {
+      margin: 0 0 20px;
+    }
+
+    .lead {
+      color: var(--green);
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .quote {
+      margin: 28px 0;
+      padding: 18px 20px;
+      border-left: 3px solid var(--green);
+      background: #f1f1e9;
+      border-radius: 0 10px 10px 0;
+      font-weight: 600;
+    }
+
+    .closing {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-weight: 600;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid var(--green);
+      border-radius: 999px;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .button:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    .footer {
+      margin-top: 30px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 22px, 760px);
+        padding-top: 24px;
+      }
+
+      .article {
+        padding: 24px 20px;
+      }
+
+      .navigation {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <a class="back" href="../Index.html">← 目次に戻る</a>
+
+    <article class="article">
+      <p class="number">THOUGHTS / 03</p>
+
+      <h1>多数決と、正しさは必ずしも同じではない</h1>
+
+      <p class="lead">
+        多くの人が選んだ意見だからといって、
+        それが必ずしも正しいとは限らない。
+      </p>
+
+      <p>
+        僕は、社会の中で物事を決めるときに、
+        多数決という仕組みは大切なものだと思っています。
+        一人ひとりの意見が異なる場面で、
+        多くの人が納得できる方向を決めるためには、
+        必要になることがあるからです。
+      </p>
+
+      <p>
+        ただし、多数決によって決まったことと、
+        その内容が本当に正しいことは、
+        分けて考える必要があると思います。
+      </p>
+
+      <h2>多数派であることは、正しさの証明ではない</h2>
+
+      <p>
+        たとえば、ある意見に多くの人が賛成していても、
+        その意見が十分な情報に基づいているとは限りません。
+        周囲の人がそう考えているからという理由で、
+        深く考えずに同じ意見を選ぶこともあると思います。
+      </p>
+
+      <p>
+        一方で、少数の人が持っている意見であっても、
+        そこに大切な指摘や、見落とされていた問題が
+        含まれている可能性があります。
+      </p>
+
+      <p>
+        つまり、意見の数だけを見て、
+        どちらが正しいかを決めてしまうのは、
+        必ずしも適切ではないと考えています。
+      </p>
+
+      <div class="quote">
+        「多くの人がそう思っている」ということと、
+        「その考え方が正しい」ということは、同じではない。
+      </div>
+
+      <h2>少数派の意見にも、耳を傾ける必要がある</h2>
+
+      <p>
+        少数派の意見は、人数が少ないというだけで、
+        周囲から理解されにくくなることがあります。
+        ときには、変わった考え方だと受け取られたり、
+        十分に話を聞いてもらえなかったりすることも
+        あるかもしれません。
+      </p>
+
+      <p>
+        しかし、その人がなぜそう考えているのかを
+        知らないまま意見を退けてしまうと、
+        本来なら気づけたはずの問題や、
+        新しい考え方を見落としてしまう可能性があります。
+      </p>
+
+      <p>
+        もちろん、少数派だから正しいというわけでもありません。
+        大切なのは、多数派か少数派かという立場だけで
+        判断するのではなく、意見の内容や根拠、
+        そしてその意見が生まれた背景を確かめることです。
+      </p>
+
+      <h2>大切なのは、人数ではなく考える姿勢</h2>
+
+      <p>
+        僕は、意見が対立したときこそ、
+        すぐにどちらかを正しいと決めつけるのではなく、
+        それぞれの考え方を理解しようとする姿勢が
+        必要だと思っています。
+      </p>
+
+      <p>
+        相手の意見を理解することは、
+        その意見に賛成することとは違います。
+        内容を確認したうえで、納得できる部分と
+        納得できない部分を分けて考えることもできます。
+      </p>
+
+      <p>
+        そうした過程があれば、単に人数の多さで
+        結論を決めるのではなく、
+        より公平で納得できる判断に近づけるのではないでしょうか。
+      </p>
+
+      <h2>僕が大切にしたい考え方</h2>
+
+      <p>
+        多数決を否定したいわけではありません。
+        ただ、多数決で決まったという理由だけで、
+        少数派の意見や、そこにいる人の気持ちまで
+        切り捨ててしまうことは避けたいと考えています。
+      </p>
+
+      <p>
+        意見が違う人がいたとしても、
+        まずはその人が何を考え、なぜそう考えたのかを知る。
+        そのうえで、根拠を確かめながら、
+        お互いに納得できる答えを探していく。
+      </p>
+
+      <p class="closing">
+        多数派か少数派かだけで人や意見を判断せず、
+        それぞれの考えに向き合うこと。
+        それが、僕にとって公平さを考えるうえで
+        大切にしたい姿勢です。
+      </p>
+    </article>
+
+    <nav class="navigation" aria-label="ページ移動">
+      <a class="button" href="02.html">← 前のページ</a>
+      <a class="button" href="../Index.html">目次</a>
+      <a class="button" href="04.html">次のページ →</a>
+    </nav>
+
+    <p class="footer">THOUGHT — 一人ひとりの考えに向き合う</p>
+  </main>
+</body>
+</html>
