@@ -1,31 +1,180 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f4ee">
-  <meta name="description" content="個人の価値観・社会への問題意識・公平な意見交換について考える文章。">
-  <title>人を理解することの重要性と、個人の尊厳について</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="人を理解すること、違いを認めること、そして互いを尊重することについて考える文章。">
+  <title>Thought | 考えを伝える場所</title>
+
   <style>
-    :root {
-      color-scheme: light;
-      --paper: #f6f4ee;
-      --surface: #fffefa;
-      --ink: #202b2b;
-      --muted: #66716d;
-      --accent: #326b5b;
-      --line: #dce2d9;
-      --soft: #eaf0e9;
-      --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
-      --sans: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    * {
+      box-sizing: border-box;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+
     body {
-      margin: 0; background: var(--paper); color: var(--ink);
-      font-family: var(--sans); line-height: 1.95; letter-spacing: .025em;
-      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 20px;
+      background: #f4f1e9;
+      color: #28352e;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      line-height: 1.9;
     }
+
+    main {
+      width: 100%;
+      max-width: 720px;
+      padding: 48px 36px;
+      background: #fffdf8;
+      border: 1px solid #e4e0d6;
+      border-radius: 18px;
+      box-shadow: 0 12px 36px rgba(40, 53, 46, 0.06);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #718071;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 10vw, 5rem);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      margin: 12px 0 30px;
+      color: #69756c;
+      font-size: 1rem;
+    }
+
+    .line {
+      width: 52px;
+      height: 2px;
+      margin: 28px 0;
+      background: #849482;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0 0 18px;
+      font-size: 0.96rem;
+    }
+
+    .quote {
+      margin: 24px 0;
+      padding-left: 18px;
+      border-left: 3px solid #a5b09e;
+      color: #4c5b50;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 13px 25px;
+      border-radius: 7px;
+      background: #35483b;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background: #506754;
+    }
+
+    .note {
+      margin-top: 28px;
+      color: #85877f;
+      font-size: 0.8rem;
+    }
+
+    footer {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid #e8e4db;
+      color: #898b83;
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 34px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">A personal statement</p>
+
+    <h1>Thought.</h1>
+
+    <p class="subtitle">考えを伝える場所。</p>
+
+    <div class="line"></div>
+
+    <h2>このページについて</h2>
+
+    <p>
+      このサイトでは、人を理解すること、違いを認めること、
+      そして互いを尊重することについて、自分なりの考えをまとめています。
+    </p>
+
+    <p>
+      人それぞれに異なる経験や価値観があり、
+      すべての人が同じ考えを持つとは限りません。
+      だからこそ、意見の違いだけで相手を判断するのではなく、
+      その背景にも目を向けることが大切だと考えています。
+    </p>
+
+    <div class="quote">
+      理解することと、賛成することは違う。<br>
+      まず相手を知ろうとすることから、対話は始まる。
+    </div>
+
+    <h2>ここから読む</h2>
+
+    <p>
+      自分が大切にしている考え方から、これまでの経験、
+      そして今後どのように活かしていきたいかまで、
+      順番に読むことができます。
+    </p>
+
+    <a class="button" href="Pages/Index.html">
+      目次を開く →
+    </a>
+
+    <p class="note">
+      ※この文章は、誰かに考えを押しつけるためではなく、
+      自分の考えを伝え、相互理解につなげるためのものです。
+    </p>
+
+    <footer>
+      Thought — Personal Ideas & Reflections
+    </footer>
+  </main>
+</body>
+
+</html>
+
     a { color: inherit; }
     .wrap { width: min(100% - 36px, 920px); margin-inline: auto; }
     .hero { padding: 76px 0 54px; }
