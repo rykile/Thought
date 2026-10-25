@@ -3,172 +3,359 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="人を理解すること、違いを認めること、そして互いを尊重することについて考える文章。">
-  <title>Thought | 考えを伝える場所</title>
-
+  <meta name="description" content="人を理解すること、尊重すること、そして違いがあっても対話を続けること。僕が大切にしている考え方のまとめ。">
+  <title>13. 最後に：僕が大切にしていること</title>
   <style>
+    :root {
+      --bg: #f6f3eb;
+      --paper: #fffdf7;
+      --text: #29352d;
+      --muted: #737b70;
+      --green: #49634f;
+      --line: #dedfd3;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 28px 20px;
-      background: #f4f1e9;
-      color: #28352e;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-      line-height: 1.9;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system, BlinkMacSystemFont,
+        "Hiragino Kaku Gothic ProN", "Yu Gothic",
+        Meiryo, sans-serif;
+      line-height: 2;
     }
 
-    main {
-      width: 100%;
-      max-width: 720px;
-      padding: 48px 36px;
-      background: #fffdf8;
-      border: 1px solid #e4e0d6;
-      border-radius: 18px;
-      box-shadow: 0 12px 36px rgba(40, 53, 46, 0.06);
+    header {
+      padding: 22px 20px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .eyebrow {
-      margin: 0 0 12px;
-      color: #718071;
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3rem, 10vw, 5rem);
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      line-height: 1.2;
-    }
-
-    .subtitle {
-      margin: 12px 0 30px;
-      color: #69756c;
-      font-size: 1rem;
-    }
-
-    .line {
-      width: 52px;
-      height: 2px;
-      margin: 28px 0;
-      background: #849482;
-    }
-
-    h2 {
-      margin: 0 0 12px;
-      font-size: 1.15rem;
+    header a {
+      color: var(--green);
+      text-decoration: none;
+      font-size: 0.9rem;
       font-weight: 600;
     }
 
+    main {
+      width: min(100% - 32px, 760px);
+      margin: 48px auto 64px;
+    }
+
+    .article {
+      padding: clamp(24px, 6vw, 52px);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(41, 53, 45, 0.04);
+    }
+
+    .number {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    h1 {
+      margin: 0 0 30px;
+      font-size: clamp(1.65rem, 5vw, 2.35rem);
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+    }
+
+    .lead {
+      margin: 0 0 36px;
+      padding: 18px 20px;
+      background: #f0f1e8;
+      border-left: 4px solid var(--green);
+      border-radius: 0 10px 10px 0;
+      font-size: 1.02rem;
+      font-weight: 500;
+    }
+
+    h2 {
+      margin: 38px 0 12px;
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
     p {
-      margin: 0 0 18px;
-      font-size: 0.96rem;
+      margin: 0 0 20px;
     }
 
-    .quote {
-      margin: 24px 0;
-      padding-left: 18px;
-      border-left: 3px solid #a5b09e;
-      color: #4c5b50;
+    .closing {
+      margin-top: 34px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-weight: 600;
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 13px 25px;
-      border-radius: 7px;
-      background: #35483b;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: background 0.2s ease;
+    .final-message {
+      margin-top: 36px;
+      padding: 28px 22px;
+      background: #edf0e7;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      text-align: center;
     }
 
-    .button:hover {
-      background: #506754;
+    .final-message p {
+      margin: 0 0 16px;
     }
 
-    .note {
+    .final-message p:last-child {
+      margin-bottom: 0;
+    }
+
+    .signature {
+      margin-top: 32px;
+      color: var(--muted);
+      text-align: right;
+      font-size: 0.9rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
       margin-top: 28px;
-      color: #85877f;
-      font-size: 0.8rem;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--green);
+      background: var(--paper);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    nav a:hover {
+      background: #e9ece2;
     }
 
     footer {
-      margin-top: 34px;
-      padding-top: 18px;
-      border-top: 1px solid #e8e4db;
-      color: #898b83;
-      font-size: 0.78rem;
+      padding: 24px 16px 36px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.8rem;
     }
 
     @media (max-width: 480px) {
       main {
-        padding: 34px 24px;
+        margin-top: 24px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 0.82rem;
       }
     }
   </style>
 </head>
+
 <body>
+  <header>
+    <a href="../Index.html">← 目次に戻る</a>
+  </header>
+
   <main>
-    <p class="eyebrow">A personal statement</p>
+    <article class="article">
+      <p class="number">THOUGHT / 13</p>
 
-    <h1>Thought.</h1>
+      <h1>最後に：僕が大切にしていること</h1>
 
-    <p class="subtitle">考えを伝える場所。</p>
+      <p class="lead">
+        人はそれぞれ違う考え方を持ち、違う経験をしながら生きています。
+        だからこそ、意見が違うことだけで相手を否定するのではなく、
+        まずはお互いを理解しようとすることが大切なのだと、僕は考えています。
+      </p>
 
-    <div class="line"></div>
+      <h2>人それぞれに、考えや背景がある</h2>
 
-    <h2>このページについて</h2>
+      <p>
+        ここまで、僕が大切にしている考え方について整理してきました。
+        人にはそれぞれ生きる価値があり、
+        それぞれの経験や立場によって、物事の見え方も変わります。
+      </p>
 
-    <p>
-      このサイトでは、人を理解すること、違いを認めること、
-      そして互いを尊重することについて、自分なりの考えをまとめています。
-    </p>
+      <p>
+        同じ出来事を経験しても、全員が同じように感じるとは限りません。
+        ある人にとって当たり前のことが、別の人にとっては難しいこともあります。
+        多くの人が支持する考え方であっても、
+        それだけであらゆる状況において正しいとは限りません。
+      </p>
 
-    <p>
-      人それぞれに異なる経験や価値観があり、
-      すべての人が同じ考えを持つとは限りません。
-      だからこそ、意見の違いだけで相手を判断するのではなく、
-      その背景にも目を向けることが大切だと考えています。
-    </p>
+      <p>
+        だからこそ、目の前にある意見だけで相手を判断するのではなく、
+        その人が何を考え、何を経験し、何を大切にしているのかにも
+        目を向けたいと思っています。
+      </p>
 
-    <div class="quote">
-      理解することと、賛成することは違う。<br>
-      まず相手を知ろうとすることから、対話は始まる。
-    </div>
+      <h2>理解することと、賛成することは違う</h2>
 
-    <h2>ここから読む</h2>
+      <p>
+        僕が特に大切にしているのは、
+        相手を理解することと、相手に賛成することを区別することです。
+      </p>
 
-    <p>
-      自分が大切にしている考え方から、これまでの経験、
-      そして今後どのように活かしていきたいかまで、
-      順番に読むことができます。
-    </p>
+      <p>
+        相手の考えを理解したからといって、
+        必ずしも同じ意見になる必要はありません。
+        納得できない部分があれば、その理由を伝えてもいいと思います。
+        問題があると感じることについては、きちんと指摘することも必要です。
+      </p>
 
-    <a class="button" href="Pages/Index.html">
-      目次を開く →
-    </a>
+      <p>
+        ただ、反対する場合であっても、
+        相手が何を伝えようとしているのかを知ることはできます。
+        そのうえで自分の意見を伝えることができれば、
+        単に否定し合うだけではない話し合いにつながるのではないでしょうか。
+      </p>
 
-    <p class="note">
-      ※この文章は、誰かに考えを押しつけるためではなく、
-      自分の考えを伝え、相互理解につなげるためのものです。
-    </p>
+      <h2>多数派でも少数派でも、人として尊重されること</h2>
 
-    <footer>
-      Thought — Personal Ideas & Reflections
-    </footer>
+      <p>
+        社会には、多くの人が支持する意見もあれば、
+        少数の人が持つ意見もあります。
+        意見をまとめるために、多数決などの仕組みが必要になる場面もあります。
+      </p>
+
+      <p>
+        しかし、人数が多いことと、あらゆる面で正しいことは同じではありません。
+        少数の意見であっても、そこに重要な問題や、
+        見落とされてきた事情が含まれている場合があります。
+      </p>
+
+      <p>
+        だからこそ、単純にどちらが多いかだけで判断するのではなく、
+        誰がどのような影響を受けるのか、
+        誰かの権利や尊厳が損なわれていないかを考えることが大切だと思います。
+      </p>
+
+      <p>
+        これは、すべての意見を同じように正しいと認めるという意味ではありません。
+        意見の内容は根拠や影響を踏まえて判断しながらも、
+        その意見を持つ人自身の尊厳まで軽く扱わないようにしたい、ということです。
+      </p>
+
+      <h2>僕が求めているのは、まず理解してもらうこと</h2>
+
+      <p>
+        僕自身も、自分の考えを誰かに伝えたいと思うことがあります。
+        そのとき、必ず賛成してほしいというわけではありません。
+        ただ、何を考え、なぜそう考えたのかを知ってもらいたいのです。
+      </p>
+
+      <p>
+        自分の考えを理解してもらったうえで、
+        相手が違う意見を持つのであれば、その違いについて話し合いたい。
+        自分に足りない視点があれば、それを学びたい。
+        そうしたやり取りができることに意味があると考えています。
+      </p>
+
+      <p>
+        そして、これは僕だけに限ったことではないと思います。
+        誰もが、自分の事情や考えを知ってもらう機会を持ち、
+        一方的な決めつけではなく、対話を通して理解を深められること。
+        そのような関係が、少しずつ広がっていけばいいと思います。
+      </p>
+
+      <h2>完璧な理解は難しくても、理解しようとはできる</h2>
+
+      <p>
+        人の気持ちや経験を、完全に理解することは難しいかもしれません。
+        自分が経験していないことを、すべて同じように感じることもできません。
+      </p>
+
+      <p>
+        それでも、分からないからといって最初から決めつけるのではなく、
+        話を聞き、背景を知り、自分なりに理解しようとすることはできます。
+      </p>
+
+      <p>
+        もし自分が誤解していたなら、考えを改める。
+        自分の伝え方に問題があったなら、見直してみる。
+        相手と意見が合わなくても、必要以上に相手の人格を否定しない。
+      </p>
+
+      <p>
+        そうした小さな積み重ねが、
+        お互いに安心して考えを伝えられる環境につながるのだと思います。
+      </p>
+
+      <h2>これからも、大切にしていきたい考え方</h2>
+
+      <p>
+        僕の考え方も、これですべて完成したわけではありません。
+        これから新しい経験をしたり、違う立場の人と話したりすることで、
+        今まで気づかなかったことを知るかもしれません。
+      </p>
+
+      <p>
+        そのときには、自分の考えを大切にしながらも、
+        必要に応じて見直していきたいと思います。
+        自分自身も理解されるべき一人の人間であるように、
+        相手もまた、理解されるべき一人の人間だからです。
+      </p>
+
+      <p>
+        誰かを理解すること。
+        自分の考えを丁寧に伝えること。
+        違いがあっても、互いを尊重すること。
+      </p>
+
+      <p>
+        これらを言葉だけで終わらせず、
+        日々の人間関係や社会との関わりの中で、
+        少しずつ実践していきたいと思っています。
+      </p>
+
+      <div class="final-message">
+        <p>
+          意見が違っていても、相手を理解しようとすることはできる。
+        </p>
+        <p>
+          理解したうえで、賛成するかどうかを自分で考えることもできる。
+        </p>
+        <p>
+          そして、自分も相手も、一人の人間として尊重することができる。
+        </p>
+        <p>
+          <strong>
+            僕は、そんな姿勢を大切にしていきたいです。
+          </strong>
+        </p>
+      </div>
+
+      <p class="signature">
+        ここまで読んでくださり、ありがとうございました。
+      </p>
+    </article>
+
+    <nav aria-label="ページ移動">
+      <a href="12.html">← 前のページ</a>
+      <a href="../Index.html">目次へ戻る</a>
+    </nav>
   </main>
+
+  <footer>
+    Thought — 考えを整理し、理解を深めるために。
+  </footer>
 </body>
 </html>
