@@ -65,12 +65,16 @@
     .top-link {
       color: var(--green);
       font-size: 0.9rem;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
     }
 
+    .top-link:hover {
+      color: var(--green-dark);
+    }
+
     .hero {
-      width: min(100% - 32px, 1000px);
+      width: min(calc(100% - 32px), 1000px);
       margin: 54px auto 32px;
       padding: clamp(32px, 7vw, 76px);
       background: var(--paper);
@@ -115,7 +119,7 @@
       padding: 13px 25px;
       border-radius: 999px;
       background: var(--green);
-      color: #fffdf7;
+      color: var(--paper);
       text-decoration: none;
       font-weight: 700;
       transition: background 0.2s, transform 0.2s;
@@ -133,7 +137,7 @@
     }
 
     .content {
-      width: min(100% - 32px, 1000px);
+      width: min(calc(100% - 32px), 1000px);
       margin: 0 auto 64px;
     }
 
@@ -196,6 +200,10 @@
     }
 
     @media (max-width: 700px) {
+      .topbar {
+        padding: 15px 18px;
+      }
+
       .hero {
         margin-top: 28px;
       }
@@ -203,9 +211,19 @@
       .cards {
         grid-template-columns: 1fr;
       }
+    }
 
-      .topbar {
-        padding: 15px 18px;
+    @media (max-width: 380px) {
+      .topbar-inner {
+        gap: 10px;
+      }
+
+      .brand {
+        font-size: 1rem;
+      }
+
+      .top-link {
+        font-size: 0.82rem;
       }
     }
   </style>
@@ -215,7 +233,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="./index.html">THOUGHT.</a>
-      <a href="./Pages/Index.html">目次を開く →</a>
+      <a class="top-link" href="./Pages/Index.html">目次を見る →</a>
     </div>
   </header>
 
@@ -240,7 +258,9 @@
         全13項目に分けて整理しています。
       </p>
 
-     <a href="./Pages/Index.html">目次を開く →</a>
+      <a class="button" href="./Pages/Index.html">
+        目次を開く →
+      </a>
 
       <p class="note">
         全13項目の文章を、目次から読むことができます。
@@ -271,7 +291,8 @@
           <p class="card-number">10 — 13</p>
           <h3>これからの対話と、自分自身</h3>
           <p>
-            誤解を減らすこと、自分も理解されるべき一人の人間であること、そして今後について考えます。
+            誤解を減らすこと、自分も理解されるべき一人の人間であること、
+            そして今後について考えます。
           </p>
         </article>
       </div>
