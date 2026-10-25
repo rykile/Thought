@@ -21,6 +21,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--bg);
@@ -30,6 +34,10 @@
         "Hiragino Kaku Gothic ProN", "Yu Gothic",
         Meiryo, sans-serif;
       line-height: 1.9;
+    }
+
+    a {
+      color: inherit;
     }
 
     header {
@@ -46,15 +54,27 @@
       gap: 16px;
     }
 
-    header a {
+    .brand {
+      color: var(--green-dark);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .header-link {
       color: var(--green);
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 700;
     }
 
+    .header-link:hover {
+      color: var(--green-dark);
+    }
+
     main {
-      width: min(100% - 32px, 820px);
+      width: min(calc(100% - 32px), 820px);
       margin: 42px auto 64px;
     }
 
@@ -64,6 +84,7 @@
       border: 1px solid var(--line);
       border-radius: 20px;
       margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(41, 53, 45, 0.03);
     }
 
     .eyebrow {
@@ -80,8 +101,8 @@
       line-height: 1.35;
     }
 
-    .intro p:last-child {
-      margin-bottom: 0;
+    .intro-text {
+      margin: 0;
       color: var(--muted);
     }
 
@@ -116,6 +137,14 @@
       border-color: var(--green);
       background: #f0f1e8;
       transform: translateY(-2px);
+    }
+
+    .chapter:focus-visible,
+    .header-link:focus-visible,
+    .brand:focus-visible,
+    .back-home:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 4px;
     }
 
     .chapter-number {
@@ -155,6 +184,7 @@
       color: var(--green);
       text-decoration: none;
       font-weight: 700;
+      transition: background 0.2s;
     }
 
     .back-home:hover {
@@ -170,6 +200,10 @@
     }
 
     @media (max-width: 520px) {
+      header {
+        padding: 15px 18px;
+      }
+
       main {
         margin-top: 24px;
       }
@@ -194,16 +228,18 @@
 <body>
   <header>
     <div class="header-inner">
-      <a href="../index.html">← トップページ</a>
-      <a href="./Index.html">THOUGHT.</a>
+      <a class="header-link" href="../index.html">← トップページ</a>
+      <a class="brand" href="./Index.html">THOUGHT.</a>
     </div>
   </header>
 
   <main>
     <section class="intro">
       <p class="eyebrow">THOUGHT / CONTENTS</p>
+
       <h1>目次</h1>
-      <p>
+
+      <p class="intro-text">
         人の価値、考え方の違い、理解することの意味。
         僕自身が大切にしている考え方を、全13項目に分けてまとめています。
       </p>
@@ -211,9 +247,9 @@
 
     <h2 class="contents-heading">全13項目</h2>
 
-    <div class="chapter-list">
+    <nav class="chapter-list" aria-label="記事一覧">
 
-      <a class="chapter" href="Number/01.html">
+      <a class="chapter" href="./Number/01.html">
         <span class="chapter-number">01</span>
         <span>
           <span class="chapter-title">自分が大切にしている考え方</span>
@@ -222,7 +258,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/02.html">
+      <a class="chapter" href="./Number/02.html">
         <span class="chapter-number">02</span>
         <span>
           <span class="chapter-title">人には、それぞれ生きる価値がある</span>
@@ -231,7 +267,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/03.html">
+      <a class="chapter" href="./Number/03.html">
         <span class="chapter-number">03</span>
         <span>
           <span class="chapter-title">多数決と、正しさは必ずしも同じではない</span>
@@ -240,7 +276,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/04.html">
+      <a class="chapter" href="./Number/04.html">
         <span class="chapter-number">04</span>
         <span>
           <span class="chapter-title">社会の問題を考えるときに必要な視点</span>
@@ -249,7 +285,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/05.html">
+      <a class="chapter" href="./Number/05.html">
         <span class="chapter-number">05</span>
         <span>
           <span class="chapter-title">これまでの経験から感じてきた問題意識</span>
@@ -258,7 +294,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/06.html">
+      <a class="chapter" href="./Number/06.html">
         <span class="chapter-number">06</span>
         <span>
           <span class="chapter-title">努力や善意があることと、周囲から批判されることについて</span>
@@ -267,7 +303,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/07.html">
+      <a class="chapter" href="./Number/07.html">
         <span class="chapter-number">07</span>
         <span>
           <span class="chapter-title">僕が求めているのは、協力や賛同よりも、まず理解してもらうこと</span>
@@ -276,7 +312,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/08.html">
+      <a class="chapter" href="./Number/08.html">
         <span class="chapter-number">08</span>
         <span>
           <span class="chapter-title">理解することと、賛成することは違う</span>
@@ -285,7 +321,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/09.html">
+      <a class="chapter" href="./Number/09.html">
         <span class="chapter-number">09</span>
         <span>
           <span class="chapter-title">意見を言う前に、相手を理解しようとする姿勢が必要</span>
@@ -294,7 +330,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/10.html">
+      <a class="chapter" href="./Number/10.html">
         <span class="chapter-number">10</span>
         <span>
           <span class="chapter-title">理解してもらうことは、誤解や不必要な批判を減らすことにつながる</span>
@@ -303,7 +339,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/11.html">
+      <a class="chapter" href="./Number/11.html">
         <span class="chapter-number">11</span>
         <span>
           <span class="chapter-title">自分自身も、理解されるべき一人の人間である</span>
@@ -312,7 +348,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/12.html">
+      <a class="chapter" href="./Number/12.html">
         <span class="chapter-number">12</span>
         <span>
           <span class="chapter-title">この考え方を、今後どのように活用したいか</span>
@@ -321,7 +357,7 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a class="chapter" href="Number/13.html">
+      <a class="chapter" href="./Number/13.html">
         <span class="chapter-number">13</span>
         <span>
           <span class="chapter-title">最後に：僕が大切にしていること</span>
@@ -330,9 +366,11 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-    </div>
+    </nav>
 
-    <a class="back-home" href="../index.html">← トップページに戻る</a>
+    <a class="back-home" href="../index.html">
+      ← トップページに戻る
+    </a>
   </main>
 
   <footer>
