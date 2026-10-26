@@ -1,93 +1,922 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="人を理解すること、考えの違い、そして互いを尊重することについての個人的な考察。">
-  <title>Thought — 考えを整理し、理解を深める</title>
-  <link rel="stylesheet" href="../Style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#173b30">
+<meta name="description" content="Thought — 日々の経験や社会との関わりを通して考えてきたことを、自分自身の言葉で整理し、発信するプロジェクト。">
+
+<title>Thought — 考え方と価値観</title>
+
+<style>
+/* =================================
+   Thought | Modern Editorial Design
+================================= */
+
+:root {
+  --green: #173b30;
+  --green-light: #285746;
+  --paper: #f7f6f0;
+  --white: #ffffff;
+  --ink: #202922;
+  --muted: #737a72;
+  --line: #e4e5dc;
+  --accent: #b8cbb7;
+  --radius: 18px;
+  --width: 860px;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 24px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Yu Gothic",
+    Meiryo,
+    sans-serif;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--green);
+}
+
+/* Reading progress */
+
+.progress-track {
+  position: fixed;
+  z-index: 1000;
+  inset: 0 0 auto;
+  height: 3px;
+  background: transparent;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: #a4c8a8;
+  transition: width 0.08s linear;
+}
+
+/* Header */
+
+.site-header {
+  background: var(--green);
+  color: var(--white);
+  padding: 0 22px;
+}
+
+.header-inner {
+  max-width: 1100px;
+  min-height: 74px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.brand small {
+  display: block;
+  color: #c5d6c9;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+}
+
+.header-link {
+  border: 1px solid #648074;
+  border-radius: 999px;
+  padding: 7px 15px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+
+.header-link:hover {
+  background: var(--green-light);
+}
+
+/* Hero */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--green);
+  color: var(--white);
+  padding: 82px 24px 92px;
+}
+
+.hero::after {
+  content: "T";
+  position: absolute;
+  right: 5%;
+  bottom: -155px;
+  color: rgba(255,255,255,0.045);
+  font-family: Georgia, serif;
+  font-size: clamp(250px, 45vw, 520px);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--width);
+  margin: auto;
+}
+
+.eyebrow {
+  margin: 0 0 20px;
+  color: #c1d4c6;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.2rem, 10vw, 6.5rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.hero-subtitle {
+  margin: 18px 0 0;
+  color: #dce7df;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  letter-spacing: 0.04em;
+}
+
+.hero-description {
+  max-width: 560px;
+  margin: 32px 0 0;
+  color: #d2ded5;
+  font-size: 0.95rem;
+  line-height: 2;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.hero-tag {
+  border: 1px solid #607c6d;
+  border-radius: 999px;
+  padding: 5px 12px;
+  color: #e2ebe4;
+  font-size: 0.75rem;
+}
+
+/* Layout */
+
+.container {
+  width: min(100% - 36px, var(--width));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 68px 0;
+}
+
+.section-heading {
+  margin: 0 0 10px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.5;
+}
+
+.section-intro {
+  margin: 0 0 30px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* About */
+
+.about {
+  border-bottom: 1px solid var(--line);
+}
+
+.about-copy {
+  max-width: 690px;
+  margin: 22px 0 0;
+  font-size: 1rem;
+  line-height: 2.1;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.value-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.55);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.value-number {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--green-light);
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+}
+
+/* Table of contents */
+
+.toc-section {
+  background: #efefe7;
+}
+
+.toc-list {
+  display: grid;
+  gap: 9px;
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toc-link {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 20px;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 13px 16px;
+  border: 1px solid #e0e1d7;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.72);
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.toc-link:hover {
+  transform: translateY(-2px);
+  border-color: #9bb39d;
+  background: var(--white);
+}
+
+.toc-number {
+  color: #547663;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+}
+
+.toc-title {
+  font-size: 0.91rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.toc-arrow {
+  color: var(--muted);
+  text-align: right;
+}
+
+/* Articles */
+
+.articles-section {
+  padding-top: 70px;
+}
+
+.article {
+  position: relative;
+  margin: 0 0 26px;
+  padding: clamp(23px, 5vw, 46px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  scroll-margin-top: 20px;
+}
+
+.article-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.article-number {
+  color: #53745f;
+  font-family: Georgia, serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+}
+
+.article-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.article h3 {
+  margin: 0 0 25px;
+  font-size: clamp(1.25rem, 4vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.65;
+  letter-spacing: -0.025em;
+}
+
+.article-body {
+  font-size: 0.97rem;
+  line-height: 2.15;
+}
+
+.article-body p {
+  margin: 0 0 20px;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
+.article-note {
+  margin-top: 28px;
+  padding: 14px 16px;
+  border-left: 3px solid #8eaa92;
+  background: #f4f6f0;
+  color: #536155;
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+.article-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.article-nav a {
+  color: var(--green-light);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.article-nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.back-to-toc {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--muted) !important;
+  font-weight: 400 !important;
+}
+
+/* Closing */
+
+.closing {
+  padding: 64px 24px 72px;
+  background: var(--green);
+  color: var(--white);
+  text-align: center;
+}
+
+.closing-inner {
+  max-width: 650px;
+  margin: auto;
+}
+
+.closing .eyebrow {
+  margin-bottom: 18px;
+}
+
+.closing h2 {
+  margin: 0 0 24px;
+  font-size: clamp(1.7rem, 5vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.closing p {
+  margin: 0 0 18px;
+  color: #d6e2d9;
+  font-size: 0.95rem;
+  line-height: 2.1;
+}
+
+.footer {
+  padding: 24px 20px;
+  background: #102b22;
+  color: #aebfb2;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.footer a {
+  color: #e0e9e2;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Back to top */
+
+.top-button {
+  position: fixed;
+  z-index: 900;
+  right: 18px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.14);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: 0.2s;
+}
+
+.top-button.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.top-button:hover {
+  background: var(--green-light);
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .header-inner {
+    min-height: 64px;
+  }
+
+  .hero {
+    padding: 66px 22px 70px;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .values {
+    grid-template-columns: 1fr;
+  }
+
+  .toc-link {
+    grid-template-columns: 36px minmax(0, 1fr) 16px;
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .toc-title {
+    font-size: 0.86rem;
+  }
+
+  .article {
+    padding: 23px 19px;
+    border-radius: 14px;
+  }
+
+  .article-body {
+    font-size: 0.94rem;
+  }
+
+  .article-nav {
+    gap: 14px;
+  }
+
+  .top-button {
+    right: 13px;
+    bottom: 14px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
 </head>
 
-<body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="./index.html">THOUGHT.</a>
-      <a class="top-link" href="./Pages/Index.html">目次を見る →</a>
-    </div>
-  </header>
+<body id="top">
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow">A PERSONAL ESSAY</p>
+<div class="progress-track" aria-hidden="true">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
 
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Thought トップ">
+      thought
+      <small>考え方と価値観</small>
+    </a>
+    <a class="header-link" href="#contents">記事一覧 ↓</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Personal thoughts &amp; values</p>
       <h1>Thought</h1>
+      <p class="hero-subtitle">考え、理解し、自分の言葉で伝える。</p>
 
-      <p class="subtitle">
-        考えを整理し、理解を深めるために。
+      <p class="hero-description">
+        日々の経験や社会との関わりを通して考えてきたことを、
+        自分自身の言葉で整理し、発信するプロジェクト。
+        異なる考え方を知り、互いを理解するためのきっかけを目指します。
       </p>
 
-      <p class="intro">
-        人には、それぞれ違った考え方や価値観があります。
-        意見が違うことは、必ずしも間違っていることを意味しません。
-        大切なのは、相手を簡単に決めつけず、
-        互いの考えを知ろうとすることではないでしょうか。
-        <br><br>
-        このページでは、僕自身が大切にしている考え方や、
-        人を理解すること、社会の問題、そして対話について、
-        全13項目に分けて整理しています。
-      </p>
-
-      <a class="button" href="./Pages/Index.html">
-        目次を開く →
-      </a>
-
-      <p class="note">
-        全13項目の文章を、目次から読むことができます。
-      </p>
-    </section>
-
-    <section class="content">
-      <h2 class="section-heading">この文章で考えること</h2>
-
-      <div class="cards">
-        <article class="card">
-          <p class="card-number">01 — 04</p>
-          <h3>人の価値と、考え方の違い</h3>
-          <p>
-            人それぞれの生き方や、多数決と正しさの関係について考えます。
-          </p>
-        </article>
-
-        <article class="card">
-          <p class="card-number">05 — 09</p>
-          <h3>経験と、理解する姿勢</h3>
-          <p>
-            自分の経験から感じた問題意識や、相手を理解することの大切さを考えます。
-          </p>
-        </article>
-
-        <article class="card">
-          <p class="card-number">10 — 13</p>
-          <h3>これからの対話と、自分自身</h3>
-          <p>
-            誤解を減らすこと、自分も理解されるべき一人の人間であること、
-            そして今後について考えます。
-          </p>
-        </article>
+      <div class="hero-meta">
+        <span class="hero-tag">13 Essays</span>
+        <span class="hero-tag">Values &amp; Society</span>
+        <span class="hero-tag">Understanding</span>
       </div>
+    </div>
+  </section>
 
-      <div class="closing">
-        <p>
-          意見が違っていても、互いを理解しようとすることはできる。
-          <br>
-          その考えを出発点に、少しずつ言葉にしていきます。
-        </p>
+  <!-- ABOUT -->
+
+  <section class="section about">
+    <div class="container">
+      <p class="eyebrow" style="color:#53745f;">About this project</p>
+      <h2 class="section-heading">このプロジェクトについて</h2>
+
+      <p class="about-copy">
+        Thought は、人の価値観や社会の問題、他者との相互理解などについて、
+        自分なりの考えを文章にまとめるプロジェクトです。
+      </p>
+
+      <p class="about-copy">
+        自分の意見を一方的に主張することだけが目的ではありません。
+        異なる考え方があることを前提に、なぜそう考えるのか、
+        どのような背景があるのかを伝え、読んだ人が自分自身の考えを
+        深めるきっかけになることを目指しています。
+      </p>
+
+      <div class="values">
+        <div class="value-card">
+          <span class="value-number">01</span>
+          人それぞれの価値を尊重する。
+        </div>
+        <div class="value-card">
+          <span class="value-number">02</span>
+          多数派の意見と正しさを区別して考える。
+        </div>
+        <div class="value-card">
+          <span class="value-number">03</span>
+          理解することと、賛成することを区別する。
+        </div>
+        <div class="value-card">
+          <span class="value-number">04</span>
+          意見を述べる前に、相手を理解しようとする。
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
-    Thought — 考えを整理し、理解を深めるために。
-  </footer>
+  <!-- TABLE OF CONTENTS -->
+
+  <section class="section toc-section" id="contents">
+    <div class="container">
+      <p class="eyebrow" style="color:#53745f;">Contents</p>
+      <h2 class="section-heading">記事一覧</h2>
+      <p class="section-intro">
+        気になるテーマを選ぶと、同じページ内の該当記事へ移動します。
+      </p>
+
+      <ol class="toc-list">
+        <li><a class="toc-link" href="#article-01"><span class="toc-number">01</span><span class="toc-title">自分が大切にしている考え方</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-02"><span class="toc-number">02</span><span class="toc-title">人には、それぞれ生きる価値がある</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-03"><span class="toc-number">03</span><span class="toc-title">多数決と、正しさは必ずしも同じではない</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-04"><span class="toc-number">04</span><span class="toc-title">社会の問題を考えるときに必要な視点</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-05"><span class="toc-number">05</span><span class="toc-title">これまでの経験から感じてきた問題意識</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-06"><span class="toc-number">06</span><span class="toc-title">努力や善意があることと、周囲から批判されることについて</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-07"><span class="toc-number">07</span><span class="toc-title">僕が求めているのは、協力や賛同よりも、まず理解してもらうこと</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-08"><span class="toc-number">08</span><span class="toc-title">理解することと、賛成することは違う</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-09"><span class="toc-number">09</span><span class="toc-title">意見を言う前に、相手を理解しようとする姿勢が必要</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-10"><span class="toc-number">10</span><span class="toc-title">理解してもらうことは、誤解や不必要な批判を減らすことにつながる</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-11"><span class="toc-number">11</span><span class="toc-title">自分自身も、理解されるべき一人の人間である</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-12"><span class="toc-number">12</span><span class="toc-title">この考え方を、今後どのように活用したいか</span><span class="toc-arrow">↘</span></a></li>
+        <li><a class="toc-link" href="#article-13"><span class="toc-number">13</span><span class="toc-title">最後に：僕が大切にしていること</span><span class="toc-arrow">↘</span></a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+
+  <section class="section articles-section">
+    <div class="container">
+      <p class="eyebrow" style="color:#53745f;">The essays</p>
+      <h2 class="section-heading">Thoughts &amp; Reflections</h2>
+      <p class="section-intro">
+        一つひとつのテーマを通して、考え方や価値観を見つめ直します。
+      </p>
+
+      <article class="article" id="article-01">
+        <div class="article-top"><span class="article-number">ESSAY 01 / 13</span><span class="article-label">VALUES</span></div>
+        <h3>自分が大切にしている考え方</h3>
+        <div class="article-body">
+          <p>僕が大切にしているのは、自分と異なる考え方をすぐに否定せず、その背景を考えようとする姿勢です。</p>
+          <p>人はそれぞれ違う経験を持ち、その経験を通して価値観を築いていきます。だからこそ、意見だけを見て判断するのではなく、なぜその人がそう考えるのかにも目を向けたいと思っています。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><span></span><a href="#article-02">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-02">
+        <div class="article-top"><span class="article-number">ESSAY 02 / 13</span><span class="article-label">HUMANITY</span></div>
+        <h3>人には、それぞれ生きる価値がある</h3>
+        <div class="article-body">
+          <p>人の価値は、能力や成果、周囲からの評価だけで決まるものではないと考えています。</p>
+          <p>得意なことも、苦手なことも、人それぞれです。誰かと同じ基準で比べるだけでは、その人が持つ背景や可能性を見落としてしまうことがあります。</p>
+          <p>違いがあることを理由に、人の存在そのものを軽く扱わない。その考え方を大切にしたいです。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-01">← 前の記事へ</a><a href="#article-03">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-03">
+        <div class="article-top"><span class="article-number">ESSAY 03 / 13</span><span class="article-label">SOCIETY</span></div>
+        <h3>多数決と、正しさは必ずしも同じではない</h3>
+        <div class="article-body">
+          <p>多数決は、集団で物事を決めるための有効な方法です。しかし、多くの人が選んだ意見だからといって、それがあらゆる面で正しいとは限りません。</p>
+          <p>少数派の意見にも、見落とされている問題や大切な視点が含まれている場合があります。人数だけで判断せず、理由や影響も考える必要があります。</p>
+          <p>結論を出すことと、その結論を改めて見直すこと。その両方が大切だと思います。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-02">← 前の記事へ</a><a href="#article-04">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-04">
+        <div class="article-top"><span class="article-number">ESSAY 04 / 13</span><span class="article-label">PERSPECTIVE</span></div>
+        <h3>社会の問題を考えるときに必要な視点</h3>
+        <div class="article-body">
+          <p>社会の問題を考えるときには、一つの出来事だけで結論を出さず、さまざまな立場や背景を考えることが必要です。</p>
+          <p>同じ状況でも、立場によって見えているものは違います。表面に現れた結果だけでなく、そこに至った経緯や、影響を受ける人々のことも考える必要があります。</p>
+          <p>複数の視点を持つことは、問題をより正確に理解するための第一歩だと思います。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-03">← 前の記事へ</a><a href="#article-05">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-05">
+        <div class="article-top"><span class="article-number">ESSAY 05 / 13</span><span class="article-label">EXPERIENCE</span></div>
+        <h3>これまでの経験から感じてきた問題意識</h3>
+        <div class="article-body">
+          <p>日々の経験や人との関わりは、自分が何を大切にしたいのかを考えるきっかけになります。</p>
+          <p>疑問を感じた出来事を、その場の感情だけで終わらせず、なぜそう感じたのか、どのような仕組みや考え方が関係しているのかを振り返ることが大切だと思います。</p>
+          <p>自分の経験を言葉にすることで、同じような問題を考えるための視点を共有できるかもしれません。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-04">← 前の記事へ</a><a href="#article-06">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-06">
+        <div class="article-top"><span class="article-number">ESSAY 06 / 13</span><span class="article-label">INTENTION</span></div>
+        <h3>努力や善意があることと、周囲から批判されることについて</h3>
+        <div class="article-body">
+          <p>努力していることや善意から行動していることと、その行動が周囲にどのように受け取られるかは、必ずしも同じではありません。</p>
+          <p>良い意図があっても、相手に伝わらなかったり、思わぬ影響を与えたりすることがあります。一方で、批判されたという事実だけで、本人の意図や努力のすべてを否定することも適切とは限りません。</p>
+          <p>意図と結果の両方を見つめ、何が起きたのかを丁寧に考えることが重要です。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-05">← 前の記事へ</a><a href="#article-07">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-07">
+        <div class="article-top"><span class="article-number">ESSAY 07 / 13</span><span class="article-label">UNDERSTANDING</span></div>
+        <h3>僕が求めているのは、協力や賛同よりも、まず理解してもらうこと</h3>
+        <div class="article-body">
+          <p>自分の考えを誰かに伝えるとき、必ずしも賛成してもらったり、協力してもらったりすることだけを求めているわけではありません。</p>
+          <p>まずは、自分が何を考え、なぜそう考えるのかを知ってもらいたい。賛成できない部分があったとしても、考えの背景を理解することはできるはずです。</p>
+          <p>理解してもらうことは、意見の違いをなくすことではなく、違いがあるまま対話するための土台になると考えています。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-06">← 前の記事へ</a><a href="#article-08">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-08">
+        <div class="article-top"><span class="article-number">ESSAY 08 / 13</span><span class="article-label">DIALOGUE</span></div>
+        <h3>理解することと、賛成することは違う</h3>
+        <div class="article-body">
+          <p>誰かの考えを理解することは、その意見に賛成することと同じではありません。</p>
+          <p>相手の立場や理由を知ったうえで、自分は違う意見を持つこともできます。理解することを賛成と結びつけてしまうと、異なる意見を知る機会そのものが失われてしまうかもしれません。</p>
+          <p>互いに違う考えを持ちながらも、相手の話を聞き、理由を理解しようとする姿勢を大切にしたいです。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-07">← 前の記事へ</a><a href="#article-09">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-09">
+        <div class="article-top"><span class="article-number">ESSAY 09 / 13</span><span class="article-label">LISTENING</span></div>
+        <h3>意見を言う前に、相手を理解しようとする姿勢が必要</h3>
+        <div class="article-body">
+          <p>意見が異なるとき、すぐに反論するのではなく、まず相手が何を伝えようとしているのかを確かめることが大切です。</p>
+          <p>言葉の一部だけを取り上げると、本来の意図とは違う意味で受け取ってしまうことがあります。分からない点を質問し、背景を確認することで、誤解を減らせる場合があります。</p>
+          <p>聞くことは、自分の意見を捨てることではありません。より正確に考えるための大切な過程です。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-08">← 前の記事へ</a><a href="#article-10">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-10">
+        <div class="article-top"><span class="article-number">ESSAY 10 / 13</span><span class="article-label">COMMUNICATION</span></div>
+        <h3>理解してもらうことは、誤解や不必要な批判を減らすことにつながる</h3>
+        <div class="article-body">
+          <p>考えの背景や伝えたいことが十分に共有されていないと、意図とは異なる受け取られ方をすることがあります。</p>
+          <p>自分の考えを整理して伝え、相手の疑問にも向き合うことは、誤解を減らすための助けになります。もちろん、丁寧に説明すれば必ず理解されるとは限りません。</p>
+          <p>それでも、互いに確認し合う機会を持つことには意味があります。相手を決めつける前に、確かめる余地を残したいです。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-09">← 前の記事へ</a><a href="#article-11">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-11">
+        <div class="article-top"><span class="article-number">ESSAY 11 / 13</span><span class="article-label">SELF-RESPECT</span></div>
+        <h3>自分自身も、理解されるべき一人の人間である</h3>
+        <div class="article-body">
+          <p>他者の考えを理解しようとすることと同じように、自分自身も理解されるべき一人の人間だということを忘れたくありません。</p>
+          <p>自分の意見が誤解されたり、意図とは違う形で評価されたりするときには、何が伝わっていないのかを考えることもできます。しかし、相手に理解してもらうために、自分の気持ちや考えをすべて押し殺す必要はありません。</p>
+          <p>他者への配慮と、自分自身を大切にすること。その両方を持つことが大切だと思います。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-10">← 前の記事へ</a><a href="#article-12">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-12">
+        <div class="article-top"><span class="article-number">ESSAY 12 / 13</span><span class="article-label">THE FUTURE</span></div>
+        <h3>この考え方を、今後どのように活用したいか</h3>
+        <div class="article-body">
+          <p>相手を理解しようとする姿勢は、考え方をまとめるだけでなく、日常の人間関係や社会との関わりの中でも生かしていけるものだと思います。</p>
+          <p>意見が違う場面では、すぐに結論を出さず、相手の理由を聞くこと。自分の考えを伝えるときには、背景も含めて説明すること。そして、自分の理解が十分ではない可能性も考えること。</p>
+          <p>こうした姿勢を少しずつ実践しながら、対話を通じて自分自身も学び続けたいです。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-11">← 前の記事へ</a><a href="#article-13">次の記事へ →</a><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+      <article class="article" id="article-13">
+        <div class="article-top"><span class="article-number">ESSAY 13 / 13</span><span class="article-label">CONCLUSION</span></div>
+        <h3>最後に：僕が大切にしていること</h3>
+        <div class="article-body">
+          <p>人はそれぞれ異なる経験を持ち、異なる考え方をします。その違いは、必ずしも対立の理由になるものではありません。</p>
+          <p>自分と違う意見をすぐに否定するのではなく、まずは相手の考えを理解しようとすること。理解したうえで意見が違うのであれば、その違いを丁寧に話し合うこと。</p>
+          <p>僕が大切にしたいのは、誰もが同じ考えになることではなく、違う考えを持つ人同士でも、互いを一人の人間として尊重し、理解しようとする姿勢です。</p>
+          <p>Thought が、さまざまな考え方に触れ、自分自身の価値観を見つめ直すきっかけになれば幸いです。</p>
+        </div>
+        <div class="article-note">※ 元の記事本文がある場合は、この文章を元の原稿に置き換えてください。</div>
+        <div class="article-nav"><a href="#article-12">← 前の記事へ</a><span></span><a class="back-to-toc" href="#contents">↑ 記事一覧へ戻る</a></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+
+  <section class="closing">
+    <div class="closing-inner">
+      <p class="eyebrow">Thank you for reading</p>
+      <h2>理解することから、<br>始めてみる。</h2>
+      <p>
+        意見が違うことは、理解できないことと同じではありません。
+        互いの考えに耳を傾けることから、新しい視点が生まれるかもしれません。
+      </p>
+      <p>最後まで読んでいただき、ありがとうございます。</p>
+      <p style="margin-top:30px;font-family:Georgia,serif;letter-spacing:.15em;">Thought</p>
+      <a class="header-link" href="#top" style="display:inline-block;margin-top:18px;">ページの先頭へ ↑</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© Thought — 考え方と価値観</p>
+  <p>
+    <a href="https://github.com/rykile/Thought">GitHub Repository</a>
+  </p>
+</footer>
+
+<button class="top-button" id="topButton" type="button"
+  aria-label="ページの先頭へ戻る" title="ページの先頭へ戻る">↑</button>
+
+<script>
+/* =================================
+   Thought | Page interactions
+================================= */
+
+(function () {
+  "use strict";
+
+  const progressBar = document.getElementById("progressBar");
+  const topButton = document.getElementById("topButton");
+
+  function updatePageProgress() {
+    const scrollableHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    const currentScroll =
+      window.scrollY || document.documentElement.scrollTop;
+
+    const progress = scrollableHeight > 0
+      ? (currentScroll / scrollableHeight) * 100
+      : 0;
+
+    progressBar.style.width = Math.min(100, progress) + "%";
+
+    if (currentScroll > 400) {
+      topButton.classList.add("visible");
+    } else {
+      topButton.classList.remove("visible");
+    }
+  }
+
+  window.addEventListener("scroll", updatePageProgress, {
+    passive: true
+  });
+
+  window.addEventListener("resize", updatePageProgress);
+
+  topButton.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches ? "auto" : "smooth"
+    });
+  });
+
+  /*
+    目次・記事ナビゲーションは、同じHTML内の
+    idを参照するアンカーリンクです。
+    別のHTMLファイルは必要ありません。
+  */
+
+  updatePageProgress();
+})();
+</script>
+
 </body>
 </html>
