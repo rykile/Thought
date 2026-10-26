@@ -36,9 +36,9 @@ Thought は、日々の経験や社会との関わりを通して考えてきた
 
 🌐 Webサイト
 
-* 公開ページ： https://rykile.github.io/Thought/
-* 記事一覧： https://rykile.github.io/Thought/Pages/Index.html
-* ソースコード： https://github.com/rykile/Thought
+* 公開ページ
+* 記事一覧
+* ソースコード（GitHub）
 
 🗂️ ファイル構成
 
