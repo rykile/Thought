@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F6F4ED">
+<title>01｜自分が大切にしている考え方 | Thought</title>
+<style>
+:root{--green:#244C3A;--purple:#49345F;--bg:#F6F4ED;--card:#FFFEFA;--text:#26352B;--muted:#788078;--line:#E2E5DC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;line-height:2}
+a{color:inherit;text-decoration:none}
+header,main{max-width:780px;margin:auto}
+header{padding:24px 28px;display:flex;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:2px;color:var(--green)}
+button{border:1px solid var(--line);background:var(--card);padding:7px 14px;border-radius:30px;color:var(--green);cursor:pointer}
+main{padding:40px 28px 90px}
+.back{font-size:13px;color:var(--muted)}
+.eyebrow{color:var(--purple);font-size:12px;letter-spacing:3px;font-weight:700;margin-top:45px}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.45;color:var(--green);margin:15px 0}
+.subtitle{font-size:13px;color:var(--muted)}
+.article{margin-top:50px;font-size:16px}
+.article h2{font-size:22px;color:var(--green);margin-top:42px}
+.article p{margin:0 0 25px}
+.quote{border-left:3px solid var(--purple);padding:18px 22px;background:var(--card);margin:35px 0}
+.chapter-nav{display:flex;justify-content:space-between;gap:15px;margin-top:70px;padding-top:25px;border-top:1px solid var(--line);font-size:13px;color:var(--green)}
+.chapter-nav a{max-width:48%}
+.theme-link{display:block;margin-top:35px;text-align:center;color:var(--green);font-size:13px}
+.en{display:none}
+body.english .ja{display:none}
+body.english .en{display:initial}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:30px;border-top:1px solid var(--line)}
+@media(max-width:600px){header{padding:18px 20px}main{padding:28px 20px 65px}.article{font-size:15px}.chapter-nav{font-size:12px}}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="../index.html">THOUGHT.</a>
+<button onclick="toggleLanguage()">日本語 / EN</button>
+</header>
+<main>
+<a class="back" href="../themes/01.html">← <span class="ja">テーマ01へ戻る</span><span class="en">Back to Theme 01</span></a>
+<div class="eyebrow">CHAPTER 01 / THEME 01</div>
+<h1 class="ja">自分が大切にしている考え方</h1>
+<h1 class="en">The Values I Hold Dear</h1>
+<p class="subtitle">WHERE MY THOUGHTS BEGIN</p>
+
+<article class="article">
+<p class="ja">人それぞれ、物事を考えるときに大切にしている価値観があると思います。僕にも、自分なりに大切にしている考え方があります。</p>
+<p class="en">Everyone has values that shape the way they see the world. I also have ideas and principles that I consider important.</p>
+
+<h2 class="ja">考えることを大切にする</h2>
+<h2 class="en">The Importance of Thinking</h2>
+<p class="ja">僕は、何かを判断するときに、周囲の意見や一般的な常識だけで決めてしまうのではなく、自分自身でも考えることを大切にしています。</p>
+<p class="en">When making judgments, I believe it is important not to rely only on the opinions of others or common assumptions, but to think independently.</p>
+
+<p class="ja">もちろん、自分の考えが常に正しいとは限りません。だからこそ、異なる意見に触れたり、自分の考えを見直したりすることにも意味があると思っています。</p>
+<p class="en">Of course, my own thoughts are not always correct. That is why I believe there is value in encountering different opinions and reconsidering my own ideas.</p>
+
+<div class="quote ja">自分の考えを持つことと、自分の考えだけを正しいと思うことは違う。</div>
+<div class="quote en">Having your own perspective is different from believing that only your perspective is right.</div>
+
+<h2 class="ja">一つの視点として伝える</h2>
+<h2 class="en">Sharing One Perspective</h2>
+<p class="ja">このThoughtで紹介する内容も、僕個人の経験や価値観をもとにしたものです。誰かに同じ考えを持ってほしいわけではありません。こういう考え方もあるのだと知ってもらい、それぞれが自分なりに考えるきっかけになればと思っています。</p>
+<p class="en">The ideas shared in Thought are based on my personal experiences and values. I do not expect everyone to think the same way. I simply hope these perspectives offer an opportunity for each reader to reflect in their own way.</p>
+</article>
+
+<nav class="chapter-nav">
+<a href="../themes/01.html">← <span class="ja">テーマ01</span><span class="en">Theme 01</span></a>
+<a href="02.html"><span class="ja">次の章：人には、それぞれ生きる価値がある</span><span class="en">Next: Everyone Has Their Own Worth</span> →</a>
+</nav>
+<a class="theme-link" href="../index.html">THOUGHT. / HOME</a>
+</main>
+<footer>THOUGHT. / RYK!LE</footer>
+<script>
+function toggleLanguage(){
+document.body.classList.toggle("english");
+document.documentElement.lang=document.body.classList.contains("english")?"en":"ja";
+}
+</script>
+</body>
+</html>
