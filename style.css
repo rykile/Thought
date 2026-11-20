@@ -237,21 +237,6 @@ p {
   margin-bottom: 32px;
 }
 
-.profile-visual {
-  margin-bottom: 28px;
-}
-
-.profile-visual img {
-  display: block;
-  width: 118px;
-  height: 118px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 22px;
-  border: 1px solid var(--line);
-  box-shadow: 0 8px 24px rgba(36, 76, 58, 0.08);
-}
-
 @media (max-width: 600px) {
   .profile-visual img {
     width: 104px;
