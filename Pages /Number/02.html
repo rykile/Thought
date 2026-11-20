@@ -1,219 +1,117 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="人には、それぞれ生きる価値があるという考えについて。">
-  <title>02. 人には、それぞれ生きる価値がある | Thought</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 32px 18px;
-      background: #f4f1e9;
-      color: #28352e;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-      line-height: 2;
-    }
-
-    main {
-      width: 100%;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 42px;
-      background: #fffdf8;
-      border: 1px solid #e4e0d6;
-      border-radius: 16px;
-      box-shadow: 0 12px 36px rgba(40, 53, 46, 0.05);
-    }
-
-    .top-link {
-      display: inline-block;
-      margin-bottom: 36px;
-      color: #657666;
-      font-size: 0.88rem;
-      text-decoration: none;
-    }
-
-    .top-link:hover {
-      text-decoration: underline;
-    }
-
-    .number {
-      margin: 0 0 8px;
-      color: #849482;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.18em;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(1.65rem, 5vw, 2.25rem);
-      font-weight: 600;
-      line-height: 1.6;
-    }
-
-    .lead {
-      margin: 18px 0 30px;
-      color: #69756c;
-      font-size: 0.98rem;
-    }
-
-    .divider {
-      width: 52px;
-      height: 2px;
-      margin: 30px 0;
-      background: #849482;
-    }
-
-    p {
-      margin: 0 0 22px;
-      font-size: 0.98rem;
-    }
-
-    .emphasis {
-      margin: 30px 0;
-      padding: 20px 22px;
-      border-left: 3px solid #849482;
-      background: #f6f5ef;
-      color: #405345;
-    }
-
-    .navigation {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 42px;
-      padding-top: 24px;
-      border-top: 1px solid #e8e4db;
-    }
-
-    .navigation a {
-      color: #405345;
-      font-size: 0.9rem;
-      text-decoration: none;
-    }
-
-    .navigation a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 32px;
-      color: #898b83;
-      font-size: 0.78rem;
-      text-align: center;
-    }
-
-    @media (max-width: 520px) {
-      body {
-        padding: 18px 12px;
-      }
-
-      main {
-        padding: 30px 23px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F6F4ED">
+<title>社会と人間関係 | Thought</title>
+<style>
+:root{--green:#244C3A;--purple:#49345F;--bg:#F6F4ED;--card:#FFFEFA;--text:#26352B;--muted:#788078;--line:#E2E5DC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.9}
+a{color:inherit;text-decoration:none}
+header,main{max-width:850px;margin:auto}
+header{padding:24px 28px;display:flex;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:2px;color:var(--green)}
+button{border:1px solid var(--line);background:var(--card);padding:7px 14px;border-radius:30px;color:var(--green);cursor:pointer}
+main{padding:45px 28px 90px}
+.back{font-size:13px;color:var(--muted)}
+.eyebrow{color:var(--purple);font-size:12px;letter-spacing:3px;font-weight:700;margin-top:45px}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.3;color:var(--green);margin:12px 0}
+.subtitle{color:var(--muted);font-size:14px}
+.intro{margin:28px 0 55px;max-width:700px}
+h2{font-size:21px;color:var(--green)}
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:23px;margin:16px 0}
+.chapter small{color:var(--purple);font-weight:700;letter-spacing:2px}
+.chapter h3{color:var(--green);margin:8px 0;font-size:19px}
+.chapter p{font-size:14px;color:var(--muted);margin:0}
+.read{display:inline-block;color:var(--green);font-size:13px;font-weight:700;margin-top:15px}
+.nav{display:flex;justify-content:space-between;margin-top:55px;border-top:1px solid var(--line);padding-top:22px;font-size:13px;color:var(--green)}
+.en{display:none}
+body.english .ja{display:none}
+body.english .en{display:initial}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:30px;border-top:1px solid var(--line)}
+@media(max-width:600px){header{padding:18px 20px}main{padding:30px 20px 70px}.chapter{padding:19px}}
+</style>
 </head>
-
 <body>
-  <main>
-    <a class="top-link" href="../Index.html">← 目次に戻る</a>
+<header>
+<a class="logo" href="../index.html">THOUGHT.</a>
+<button onclick="toggleLanguage()">日本語 / EN</button>
+</header>
+<main>
+<a class="back" href="../index.html">← <span class="ja">Thoughtトップへ戻る</span><span class="en">Back to Thought</span></a>
 
-    <p class="number">02 / THOUGHT</p>
+<div class="eyebrow">THEME 02 / CHAPTERS 04–07</div>
+<h1 class="ja">社会と人間関係</h1>
+<h1 class="en">Society & Relationships</h1>
+<p class="subtitle">EXPERIENCES, PERSPECTIVES AND CONNECTIONS</p>
 
-    <h1>人には、それぞれ生きる価値がある</h1>
+<section class="intro">
+<p class="ja">
+僕たちは日々、さまざまな人と関わりながら生活しています。
+同じ出来事でも、立場や経験によって受け止め方は変わります。
+このテーマでは、自分の経験を出発点に、社会や人間関係について考えていきます。
+</p>
+<p class="en">
+We interact with many different people in our daily lives.
+Even the same event can be understood differently depending on
+our experiences and positions. Starting from my own experiences,
+this theme explores society and human relationships.
+</p>
+</section>
 
-    <p class="lead">
-      人の価値は、他人との比較だけでは決められない。
-    </p>
+<h2 class="ja">このテーマで考えること</h2>
+<h2 class="en">Inside This Theme</h2>
 
-    <div class="divider"></div>
+<a class="chapter" href="../chapters/04.html">
+<small>CHAPTER 04</small>
+<h3 class="ja">社会の問題を考えるときに必要な視点</h3>
+<h3 class="en">Perspectives Needed to Understand Social Issues</h3>
+<p class="ja">一つの出来事にも複数の立場や背景があることを考える。</p>
+<p class="en">Looking at the different positions and backgrounds behind social issues.</p>
+<span class="read">READ CHAPTER →</span>
+</a>
 
-    <p>
-      僕は、人にはそれぞれ生きる価値があると考えています。
-      それは、能力や実績、周囲からの評価、社会への貢献度などによって、
-      人としての価値が決まるという意味ではありません。
-    </p>
+<a class="chapter" href="../chapters/05.html">
+<small>CHAPTER 05</small>
+<h3 class="ja">これまでの経験から感じてきた問題意識</h3>
+<h3 class="en">Questions That Emerged from My Experiences</h3>
+<p class="ja">自分が経験したことと、そこから考えたことを振り返る。</p>
+<p class="en">Reflecting on my experiences and the questions they raised.</p>
+<span class="read">READ CHAPTER →</span>
+</a>
 
-    <p>
-      人にはそれぞれ得意なことや苦手なことがあり、
-      置かれている環境や経験、考え方も異なります。
-      ある人にとって簡単なことが、別の人にとっては難しいこともあります。
-      その違いだけで、どちらかの人間としての価値が低くなるわけではありません。
-    </p>
+<a class="chapter" href="../chapters/06.html">
+<small>CHAPTER 06</small>
+<h3 class="ja">努力や善意があることと、周囲から批判されることについて</h3>
+<h3 class="en">Good Intentions, Effort and Criticism</h3>
+<p class="ja">行動の意図と結果、受け取る側の感じ方の違いを考える。</p>
+<p class="en">Considering the differences between intentions, outcomes and perceptions.</p>
+<span class="read">READ CHAPTER →</span>
+</a>
 
-    <div class="emphasis">
-      誰かより優れていることと、人として大切にされる価値があることは、
-      同じ基準で測れるものではないと思います。
-    </div>
+<a class="chapter" href="../chapters/07.html">
+<small>CHAPTER 07</small>
+<h3 class="ja">僕が求めているのは、協力や賛同よりも、まず理解してもらうこと</h3>
+<h3 class="en">What I Seek First Is Understanding, Not Agreement</h3>
+<p class="ja">なぜ理解を求めるのか、その理由を自分の経験や価値観から説明する。</p>
+<p class="en">Exploring why being understood matters to me.</p>
+<span class="read">READ CHAPTER →</span>
+</a>
 
-    <p>
-      社会では、成績や仕事の成果、収入、知名度など、
-      数字や目に見える結果によって人が評価される場面があります。
-      そうした評価が必要な場合もありますが、
-      それだけで人そのものを判断してしまうことには注意が必要です。
-    </p>
-
-    <p>
-      表からは分からない事情を抱えている人もいれば、
-      自分の力を発揮する機会に恵まれていない人もいます。
-      周囲から見える一部分だけで、その人のすべてを理解したつもりになることは
-      できないのではないでしょうか。
-    </p>
-
-    <p>
-      また、少数派の考え方を持つ人や、周囲と異なる生き方をしている人が、
-      その違いを理由に軽く扱われることも考えられます。
-      しかし、多数派と異なること自体は、その人の価値を否定する理由にはなりません。
-    </p>
-
-    <p>
-      もちろん、誰もがどのような行動をしても批判されないということではありません。
-      人を傷つける行為や、他者の権利を侵害する行為については、
-      その影響を考え、必要な対応をすることが大切です。
-      ただし、行動に対して意見を述べることと、
-      その人の存在そのものを否定することは分けて考えたいです。
-    </p>
-
-    <p>
-      自分と考え方が違う人であっても、自分には理解しにくい人であっても、
-      一人の人間として尊重する姿勢は忘れたくありません。
-      それは相手のすべてに賛成することではなく、
-      お互いに尊厳を持つ存在であると認めることだと考えています。
-    </p>
-
-    <p>
-      僕自身も、得意なことだけでなく、苦手なことや未熟な部分があります。
-      だからこそ、他人を一方的に評価するのではなく、
-      自分も相手も、それぞれ異なる背景を持つ人間なのだと考えながら
-      向き合っていきたいです。
-    </p>
-
-    <p>
-      人の価値を一つの基準だけで決めつけないこと。
-      そして、違いがあるからこそ、相手を知ろうとすること。
-      それが、互いを尊重するための大切な出発点だと思います。
-    </p>
-
-    <nav class="navigation">
-      <a href="01.html">← 前の項目へ</a>
-      <a href="../Index.html">目次へ</a>
-      <a href="03.html">次の項目へ →</a>
-    </nav>
-
-    <footer>
-      Thought — Personal Ideas & Reflections
-    </footer>
-  </main>
+<div class="nav">
+<a href="01.html">← <span class="ja">前のテーマ</span><span class="en">Previous Theme</span></a>
+<a href="03.html"><span class="ja">次のテーマへ →</span><span class="en">Next Theme →</span></a>
+</div>
+</main>
+<footer>THOUGHT. / RYK!LE</footer>
+<script>
+function toggleLanguage(){
+document.body.classList.toggle("english");
+document.documentElement.lang=document.body.classList.contains("english")?"en":"ja";
+}
+</script>
 </body>
 </html>
