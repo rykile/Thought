@@ -244,6 +244,42 @@ p {
   }
 }
 
+.hero-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hero-heading h1 {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-profile {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(36, 76, 58, 0.08);
+}
+
+@media (max-width: 600px) {
+  .hero-heading {
+    gap: 10px;
+  }
+
+  .hero-profile {
+    width: 68px;
+    height: 68px;
+    border-radius: 12px;
+  }
+}
+
 .intro-text {
   margin-bottom: 0;
   color: var(--muted);
