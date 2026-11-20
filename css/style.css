@@ -1091,3 +1091,8 @@ button:focus-visible {
   }
 
 }
+
+/* Footer alignment adjustment */
+.thought-home .home-footer {
+  text-align: left;
+}
