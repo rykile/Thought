@@ -140,6 +140,40 @@ main {
   box-shadow: var(--shadow);
 }
 
+.hero-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hero-heading h1 {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-profile {
+  width: clamp(72px, 12vw, 112px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(36, 76, 58, 0.08);
+}
+
+@media (max-width: 600px) {
+  .hero-heading {
+    gap: 12px;
+  }
+
+  .hero-profile {
+    width: 68px;
+    border-radius: 14px;
+  }
+}
+
 .content {
   margin-bottom: 64px;
 }
